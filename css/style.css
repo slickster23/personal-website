@@ -198,105 +198,43 @@ header .scroll-bar {
     line-height: 1.6;
 }
 
-
-.about .row {
-    display: flex;
-    flex-direction: column;
+.about .stack-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 4rem;
+        background-color: #fff;
 }
 
-.about .row .title {
-    font-size: 2rem;
-    color: var(--blue);
-    padding: .5rem 0;
-    letter-spacing: -0.2rem;
+.about h2 {
+    font-size: 3.8rem;
+    letter-spacing: -0.15rem;
+    color: #6b4be0;
+    font-weight: 600;
+    text-align: center;
+    
 }
 
-.about .row .progress-bar {
-    flex: 1 1 40rem;
-    padding: 1rem;
-}
-
-.about .row .progress-bar .progress {
-    padding: 1rem 0;
-}
-
-.about .row .progress-bar .progress i {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
+.about h2.title span {
+    color: #666
 }
 
 
-.about .row .progress-bar .progress h3 {
-    display: flex;
-    justify-content: space-between;
-    color: #666;
-    font-size: 1.4rem;
-    letter-spacing: -0.1rem;
+
+.about .stack-container .box-item {
+    margin: 1.5rem;
+    flex: 1 1 20rem;
+    overflow: hidden;
+    position: relative;
 }
 
-.about .row .progress-bar .progress .bar {
-    height: 2rem;
-    width: 100%;
-    border: .2rem solid var(--blue);
-    border-radius: 5rem;
-    margin: .5rem 0;
+.about .stack-container .box-item img {
+    width: 50%;
 }
 
-.about .row .progress-bar .progress .bar span {
-    display: block;
-    background: var(--blue);
-    border-radius: 5rem;
-    letter-spacing: -0.1rem;
-    height: 100%;
-}
-
-.about .row .progress-bar .progress:nth-child(2) .bar span {
-    width: 95%;
-}
-
-.about .row .progress-bar .progress:nth-child(3) .bar span {
-    width: 75%;
-}
-
-.about .row .progress-bar .progress:nth-child(4) .bar span {
-    width: 60%;
-}
-
-.about .row .progress-bar .progress:nth-child(5) .bar span {
-    width: 75%;
-}
-
-.about .row .progress-bar .progress:nth-child(6) .bar span {
-    width: 70%;
-}
-
-.about .row .personal-info {
-    flex: 1 1 55rem;
-    padding: 1rem;
-}
-
-.about .row .personal-info .box-container {
-    display: flex;
-    justify-content: space-between;
-}
-
-.about .row .personal-info .box-container .box {
-}
-
-.about .row .personal-info .box-container .box h3 {
-    font-size: 1.4rem;
-    color: #333;
-    padding: 1rem 0;
-    text-transform: none;
-    letter-spacing: -0.1rem;
-}
-
-.about .row .personal-info .box-container .box h3 span {
-    color: #999;
-    font-size: 1.4rem;
-
+.about .stack-container .box-item:hover {
+    transform: scale(1.2);
 }
 
 
@@ -426,8 +364,8 @@ span {
 
 .portfolio .box-container {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
 }
 
@@ -450,17 +388,16 @@ span {
 
 .portfolio .container {
     display: flex;
-    margin: 1rem;
-    flex-direction: column;
-    border: .5rem;
+    margin: 2rem;
+    border: 1.5rem;
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
     background-color: #fff;
 }
 
 .portfolio .container .box {
-    
     margin-top: 3rem ;
     padding: 1rem;
+    margin: 4rem;
 
 }
 
@@ -468,18 +405,38 @@ span {
     top: 0;
 }
 
-.portfolio .container .box:hover img {
-    transform: scale(1.05);
-}
 
 .portfolio .container .box h1 {
     text-align: center;
     font-size:3rem;
     font-weight: 600;
-    margin-bottom: 3rem;
-    margin-top: 3rem;
+    margin-top: 1rem;
     margin-left: 2rem;
     letter-spacing: -0.15rem;
+}
+
+.portfolio .container .box .project-technologies {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+}
+
+.portfolio .container .box .project-technologies p {
+    color: white;
+    border-radius: 8px;
+    background: #6b4be0;
+    font-size: 1.3rem;
+    padding: 1rem;
+}
+
+
+
+.portfolio .container .box a:hover {
+    text-decoration: underline;
+    text-decoration-color: #6b4be0;
+    cursor: pointer;
 }
 
 .portfolio .container .box a:visited {
@@ -528,7 +485,6 @@ span {
 }
 
 .portfolio .container .box img {
-    height: 100%;
     width: 100%;
 
 }
@@ -660,22 +616,6 @@ span {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* media queries  */
 
 @media (max-width:1300px) {
@@ -694,6 +634,19 @@ span {
         padding-bottom: 3rem;
     }
 
+    .about .stack-container .box-item img {
+        width: 90%;
+    }
+
+
+
+}
+
+@media (max-width: 1145px) {
+    .portfolio .container {
+        flex-direction: column;
+        margin: 1rem
+    }
 }
 
 @media (max-width:768px) {
@@ -701,6 +654,9 @@ span {
     #menu {
         display: block;
     }
+
+  
+
 
     header .navbar {
         position: absolute;
